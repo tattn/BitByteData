@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BitReader Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Protocol/BitReader" class="dashAnchor"></a>
+
+    <a title="BitReader Protocol Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          BitByteData 1.4.3 Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/tsolomko/BitByteData">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">BitByteData Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      BitReader Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Reading%20bytes.html">Reading bytes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ByteReader.html">ByteReader</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Reading%20bits%20%28and%20bytes%29.html">Reading bits (and bytes)</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/BitReader.html">BitReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LsbBitReader.html">LsbBitReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MsbBitReader.html">MsbBitReader</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Writing%20bits%20%28and%20bytes%29.html">Writing bits (and bytes)</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/BitWriter.html">BitWriter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/LsbBitWriter.html">LsbBitWriter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MsbBitWriter.html">MsbBitWriter</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>BitReader</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">BitReader</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>A type that contains functions for reading <code>Data</code> bit-by-bit and byte-by-byte.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP9isAlignedSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isAligned" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP9isAlignedSbvp">isAligned</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>True, if reader&rsquo;s BIT pointer is aligned with the BYTE border.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isAligned</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L12">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP8bitsLeftSivp"></a>
+                    <a name="//apple_ref/swift/Property/bitsLeft" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP8bitsLeftSivp">bitsLeft</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Amount of bits left to read.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bitsLeft</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L15">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP8bitsReadSivp"></a>
+                    <a name="//apple_ref/swift/Property/bitsRead" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP8bitsReadSivp">bitsRead</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Amount of bits that were already read.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bitsRead</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L18">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP4datax10Foundation0C0V_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(data:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP4datax10Foundation0C0V_tcfc">init(data:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an instance for reading bits (and bytes) from <code>data</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L21">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderPyxAA0bD0Ccfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderPyxAA0bD0Ccfc">init(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Converts a <code><a href="../Classes/ByteReader.html">ByteReader</a></code> instance into <code>BitReader</code>, enabling bits reading capabilities. Current <code>offset</code> value of
+<code>byteReader</code> is preserved.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">byteReader</span><span class="p">:</span> <span class="kt"><a href="../Classes/ByteReader.html">ByteReader</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L27">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP3bits5UInt8VyF"></a>
+                    <a name="//apple_ref/swift/Method/bit()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP3bits5UInt8VyF">bit()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads bit and returns it, advancing by one BIT position.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">bit</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L30">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP4bits5countSays5UInt8VGSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/bits(count:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP4bits5countSays5UInt8VGSi_tF">bits(count:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads <code>count</code> bits and returns them as an array of <code>UInt8</code>, advancing by <code>count</code> BIT positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">bits</span><span class="p">(</span><span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">UInt8</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L33">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP3int8fromBitsS2i_tF"></a>
+                    <a name="//apple_ref/swift/Method/int(fromBits:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP3int8fromBitsS2i_tF">int(fromBits:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads <code>fromBits</code> bits and returns them as an <code>Int</code> number, advancing by <code>fromBits</code> BIT positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">int</span><span class="p">(</span><span class="n">fromBits</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L36">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP4byte8fromBitss5UInt8VSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/byte(fromBits:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP4byte8fromBitss5UInt8VSi_tF">byte(fromBits:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads <code>fromBits</code> bits and returns them as an <code>UInt8</code> number, advancing by <code>fromBits</code> BIT positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">byte</span><span class="p">(</span><span class="n">fromBits</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L39">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP6uint168fromBitss6UInt16VSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/uint16(fromBits:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP6uint168fromBitss6UInt16VSi_tF">uint16(fromBits:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads <code>fromBits</code> bits and returns them as an <code>UInt16</code> number, advancing by <code>fromBits</code> BIT positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">uint16</span><span class="p">(</span><span class="n">fromBits</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt16</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L42">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP6uint328fromBitss6UInt32VSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/uint32(fromBits:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP6uint328fromBitss6UInt32VSi_tF">uint32(fromBits:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads <code>fromBits</code> bits and returns them as an <code>UInt32</code> number, advancing by <code>fromBits</code> BIT positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">uint32</span><span class="p">(</span><span class="n">fromBits</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L45">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP6uint648fromBitss6UInt64VSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/uint64(fromBits:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP6uint648fromBitss6UInt64VSi_tF">uint64(fromBits:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads <code>fromBits</code> bits and returns them as an <code>UInt64</code> number, advancing by <code>fromBits</code> BIT positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">uint64</span><span class="p">(</span><span class="n">fromBits</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt64</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L48">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP5alignyyF"></a>
+                    <a name="//apple_ref/swift/Method/align()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP5alignyyF">align()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Aligns reader&rsquo;s BIT pointer to the BYTE border, i.e. moves BIT pointer to the first BIT of the next BYTE.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">align</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L51">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ByteReader&#39;s%20methods."></a>
+                <a name="//apple_ref/swift/Section/ByteReader&#39;s methods." class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ByteReader&#39;s%20methods."></a>
+                  <h3 class="section-name"><p>ByteReader&rsquo;s methods.</p>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP4bytes5UInt8VyF"></a>
+                    <a name="//apple_ref/swift/Method/byte()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP4bytes5UInt8VyF">byte()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads byte and returns it, advancing by one BYTE position.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">byte</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L56">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP5bytes5countSays5UInt8VGSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/bytes(count:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP5bytes5countSays5UInt8VGSi_tF">bytes(count:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads <code>count</code> bytes and returns them as an array of <code>UInt8</code>, advancing by <code>count</code> BYTE positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">bytes</span><span class="p">(</span><span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">UInt8</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L59">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP3int9fromBytesS2i_tF"></a>
+                    <a name="//apple_ref/swift/Method/int(fromBytes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP3int9fromBytesS2i_tF">int(fromBytes:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads <code>fromBytes</code> bytes and returns them as an <code>Int</code> number, advancing by <code>fromBytes</code> BYTE positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">int</span><span class="p">(</span><span class="n">fromBytes</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L62">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP6uint64s6UInt64VyF"></a>
+                    <a name="//apple_ref/swift/Method/uint64()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP6uint64s6UInt64VyF">uint64()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads 8 bytes and returns them as a <code>UInt64</code> number, advancing by 8 BYTE positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">uint64</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UInt64</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L65">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP6uint649fromBytess6UInt64VSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/uint64(fromBytes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP6uint649fromBytess6UInt64VSi_tF">uint64(fromBytes:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads <code>fromBytes</code> bytes and returns them as a <code>UInt64</code> number, advancing by 8 BYTE positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">uint64</span><span class="p">(</span><span class="n">fromBytes</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt64</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L68">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP6uint32s6UInt32VyF"></a>
+                    <a name="//apple_ref/swift/Method/uint32()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP6uint32s6UInt32VyF">uint32()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads 4 bytes and returns them as a <code>UInt32</code> number, advancing by 4 BYTE positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">uint32</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L71">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP6uint329fromBytess6UInt32VSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/uint32(fromBytes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP6uint329fromBytess6UInt32VSi_tF">uint32(fromBytes:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads <code>fromBytes</code> bytes and returns them as a <code>UInt32</code> number, advancing by 8 BYTE positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">uint32</span><span class="p">(</span><span class="n">fromBytes</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L74">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP6uint16s6UInt16VyF"></a>
+                    <a name="//apple_ref/swift/Method/uint16()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP6uint16s6UInt16VyF">uint16()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads 2 bytes and returns them as a <code>UInt16</code> number, advancing by 2 BYTE positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">uint16</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UInt16</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L77">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11BitByteData0A6ReaderP6uint169fromBytess6UInt16VSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/uint16(fromBytes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11BitByteData0A6ReaderP6uint169fromBytess6UInt16VSi_tF">uint16(fromBytes:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads <code>fromBytes</code> bytes and returns them as a <code>UInt16</code> number, advancing by 8 BYTE positions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">uint16</span><span class="p">(</span><span class="n">fromBytes</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt16</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tsolomko/BitByteData/tree/1.4.3/Sources/BitReader.swift#L80">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>© 2020 Timofey Solomko</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

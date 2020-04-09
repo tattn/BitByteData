@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BitByteData  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="BitByteData  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          BitByteData 1.4.3 Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/tsolomko/BitByteData">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">BitByteData Reference</a>
+      <img class="carat" src="img/carat.png" />
+      BitByteData  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Reading%20bytes.html">Reading bytes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/ByteReader.html">ByteReader</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Reading%20bits%20%28and%20bytes%29.html">Reading bits (and bytes)</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/BitReader.html">BitReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LsbBitReader.html">LsbBitReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MsbBitReader.html">MsbBitReader</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Writing%20bits%20%28and%20bytes%29.html">Writing bits (and bytes)</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/BitWriter.html">BitWriter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/LsbBitWriter.html">LsbBitWriter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MsbBitWriter.html">MsbBitWriter</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            
+            <h1 id='bitbytedata' class='heading'>BitByteData</h1>
+
+<p><a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-4.2-blue.svg" alt="Swift 4.2"></a>
+<a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-/5.X-blue.svg" alt="Swift 5.X"></a>
+<a href="https://raw.githubusercontent.com/tsolomko/BitByteData/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="GitHub license"></a>
+<a href="https://travis-ci.com/tsolomko/BitByteData"><img src="https://travis-ci.com/tsolomko/BitByteData.svg?branch=develop" alt="Build Status"></a></p>
+
+<p>A Swift framework with classes for reading and writing bits and bytes.</p>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<p>BitByteData can be integrated into your project using Swift Package Manager, CocoaPods or Carthage.</p>
+<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
+
+<p>To install using SPM, add BitByteData to you package dependencies and specify it as a dependency for your target, e.g.:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PackageDescription</span>
+
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"PackageName"</span><span class="p">,</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/tsolomko/BitByteData.git"</span><span class="p">,</span>
+                 <span class="nv">from</span><span class="p">:</span> <span class="s">"1.4.0"</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="nv">targets</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">target</span><span class="p">(</span>
+            <span class="nv">name</span><span class="p">:</span> <span class="s">"TargetName"</span><span class="p">,</span>
+            <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="s">"BitByteData"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+
+<p>More details you can find in <a href="https://github.com/apple/swift-package-manager/tree/master/Documentation">Swift Package Manager&rsquo;s Documentation</a>.</p>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p>Add <code>pod &#39;BitByteData&#39;, &#39;~&gt; 1.4&#39;</code> and <code>use_frameworks!</code> lines to your Podfile.</p>
+
+<p>To complete installation, run <code>pod install</code>.</p>
+<h3 id='carthage' class='heading'>Carthage</h3>
+
+<p><strong>Important:</strong> Only Swift 5.x is supported when installing BitByteData via Carthage.</p>
+
+<p>Add to your Cartfile <code>github &quot;tsolomko/BitByteData&quot; ~&gt; 1.4</code>.</p>
+
+<p>Then run <code>carthage update</code>.</p>
+
+<p>Finally, drag and drop <code>BitByteData.framework</code> from <code>Carthage/Build</code> folder into the &ldquo;Embedded Binaries&rdquo; section on your
+targets&rsquo; &ldquo;General&rdquo; tab in Xcode.</p>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>Use <code><a href="Classes/ByteReader.html">ByteReader</a></code> class to read bytes.
+For reading bits there are two classes: <code><a href="Classes/LsbBitReader.html">LsbBitReader</a></code> and <code><a href="Classes/MsbBitReader.html">MsbBitReader</a></code>, which implement <code><a href="Protocols/BitReader.html">BitReader</a></code> protocol
+for two bit-numbering schemes (&ldquo;LSB 0&rdquo; and &ldquo;MSB 0&rdquo; correspondingly).
+Both <code><a href="Classes/LsbBitReader.html">LsbBitReader</a></code> and <code><a href="Classes/MsbBitReader.html">MsbBitReader</a></code> classes inherit from <code><a href="Classes/ByteReader.html">ByteReader</a></code> so you can also use them to read bytes
+(but they must be aligned, see documentation for more details).</p>
+
+<p>Writing bits is implemented in two classes <code><a href="Classes/LsbBitWriter.html">LsbBitWriter</a></code> and <code><a href="Classes/MsbBitWriter.html">MsbBitWriter</a></code> (again, for two bit-numbering schemes).
+They both conform to <code><a href="Protocols/BitWriter.html">BitWriter</a></code> protocol.</p>
+
+<p><strong>Note:</strong> All readers and writers aren&rsquo;t structs, but classes intentionally to make it easier to pass them as arguments
+to functions and to eliminate unnecessary copying and <code>inout</code>s.</p>
+<h2 id='documentation' class='heading'>Documentation</h2>
+
+<p>Every function or type of BitByteData&rsquo;s public API is documented.
+This documentation can be found at its own <a href="http://tsolomko.github.io/BitByteData">website</a>.</p>
+<h2 id='contributing' class='heading'>Contributing</h2>
+
+<p>Whether you find a bug, have a suggestion, idea, feedback or something else, please
+<a href="https://github.com/tsolomko/BitByteData/issues">create an issue</a> on GitHub.</p>
+
+<p>If you&rsquo;d like to contribute, please <a href="https://github.com/tsolomko/BitByteData/pulls">create a pull request</a> on GitHub.</p>
+
+<p><strong>Note:</strong> If you are considering working on BitByteData, please note that Xcode project (BitByteData.xcodeproj)
+was created manually and you shouldn&rsquo;t use <code>swift package generate-xcodeproj</code> command.</p>
+<h3 id='performance-and-benchmarks' class='heading'>Performance and benchmarks</h3>
+
+<p>One of the most important goals of BitByteData&rsquo;s development is high speed performance. To help achieve this goal there
+are benchmarks for every function in the project as well as a handy command-line tool, <code>benchmarks.py</code>, which helps to
+run, show, and compare benchmarks and their results.</p>
+
+<p>If you are considering contributing to the project please make sure that:</p>
+
+<ol>
+<li>Every new function has also a new benchmark added.</li>
+<li>Every other change to any existing function doesn&rsquo;t introduce performance regressions, or, at the very least, these
+regressions are small and such performance tradeoff is necessary and justifiable.</li>
+</ol>
+
+<p>Finally, please note that any meaningful comparison can be made only between benchmarks run on the same hardware and
+software.</p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>© 2020 Timofey Solomko</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
